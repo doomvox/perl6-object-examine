@@ -1,0 +1,21 @@
+        {
+            "perl" : "6.c",
+            "name" : "Object::Examine",
+            "auth" : "github:doomvox",
+            "api" : "1",
+            "version" : "0.0.1",
+            "description" : "Get info about an object (or class), e.g. a menu of available methods",
+            "authors" : [ "Joseph Brenner" ],
+            "license" : "Artistic-2.0",
+            "provides" : {
+                "Object::Examine" : "lib/Object/Examine.pm6"
+            },
+            "depends" : [ ],
+            "build-depends" : [ ],
+            "test-depends" : [ 'Test' ],
+            "resources" : [ ],
+            "tags": [
+                "Object", "Examine", "ObjectExamine"
+            ],
+            "source-url" : "git://github.com/doomvox/Object-Examine.git"
+        }
