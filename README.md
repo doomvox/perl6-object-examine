@@ -32,14 +32,14 @@ Internal Routines
 MOTIVATION
 ==========
 
-There's a useful meta-method named "^methods" which gives you a list of available methods on an object or class, but unfortunately in uses a format which is perhaps LTA for human consumption:
+There's a useful meta-method named "^methods" which gives you a list of available methods on an object or class, but unfortunately it uses a format which is perhaps LTA for human consumption:
 
     my $set = Set.new(<alphan betazoid gammera>);
     say $set.^methods;
 
     # (iterator clone STORE keyof grab SET-SELF Real elems roll Numeric new-from-pairs total pickpairs RAW-HASH of Int Num default grabpairs fmt Capture pick WHICH Method+{is-nodal}.new Method+{is-nodal}.new Method+{is-nodal}.new Method+{is-nodal}.new Method+{is-nodal}.new Method+{is-nodal}.new Method+{is-nodal}.new new Method+{is-nodal}.new Method+{is-nodal}.new minpairs maxpairs Bool Method+{is-nodal}.new Method+{is-nodal}.new ACCEPTS Str gist perl Method+{is-nodal}.new Method+{is-nodal}.new Method+{is-nodal}.new Method+{is-nodal}.new Method+{is-nodal}.new Method+{is-nodal}.new Method+{is-nodal}.new BUILDALL)
 
-This list is not sorted, it contains redundant entries, and it includes the rather mysterious "Method+{is-nodal}.new" which the average user probably does not want to hear about. By default, it's not very complete, and you might want to use ".^methods(:all)" or ".^methods(:local)" -- presuming you know about those options.
+This list is not sorted, it contains redundant entries, and it includes the rather mysterious "Method+{is-nodal}.new" which the average user probably does not want to hear about. By default, it's not very complete, and you might want to use ".^methods(:all)" to look all the way up the inheritance chain, presuming you knew about that option.
 
 The "menu" method tries to fix these issues, though at the expense of being rather verbose: 
 
