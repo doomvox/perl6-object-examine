@@ -74,7 +74,7 @@ Class it comes from.
 
 There's a useful meta-method named "^methods" which gives you a
 list of available methods on an object or class, but
-unfortunately in uses a format which is perhaps LTA for human
+unfortunately it uses a format which is perhaps LTA for human
 consumption:
 
    my $set = Set.new(<alphan betazoid gammera>);
@@ -84,9 +84,10 @@ consumption:
 
 This list is not sorted, it contains redundant entries, and it
 includes the rather mysterious "Method+{is-nodal}.new" which the
-average user probably does not want to hear about.  By default, 
-it's not very complete, and you might want to use ".^methods(:all)"
-or ".^methods(:local)" -- presuming you know about those options.
+average user probably does not want to hear about.  By default,
+it's not very complete, and you might want to use ".^methods(:all)" 
+to look all the way up the inheritance chain, presuming you knew
+about that option.
 
 The "menu" method tries to fix these issues, though at the expense of
 being rather verbose:                                                    

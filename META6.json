@@ -3,7 +3,7 @@
             "name" : "Object::Examine",
             "auth" : "github:doomvox",
             "api" : "1",
-            "version" : "0.0.1",
+            "version" : "0.0.3",
             "description" : "Get info about an object (or class), e.g. a menu of available methods",
             "authors" : [ "Joseph Brenner" ],
             "license" : "Artistic-2.0",
