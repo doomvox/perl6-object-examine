@@ -15,7 +15,7 @@ subtest {
   # $report ~= 'Method+{is-nodal}.new     List                     ';
 
   my @report = $report.lines;
-  say @report[203];
+  # say @report[203];
 
   my $l = @report.elems;  # 203
   my $a_few_dozen = 24;
@@ -32,7 +32,10 @@ subtest {
   my @expected = (('grab',    'Array'),
                   ('take',    'Mu'),
                   ('split',   'Cool'),
-                  ('rotate',  'List'));
+#                  ('rotate',  'List')  ## originally rotate was a List method, now it's an Array
+                  ('rotate',  'Array'),
+                 );
+
   
   my @not_expected = ( ('Method+{is-nodal}.new',     'List'),
                        ('Method+{is-nodal}.new',     'Array'),
@@ -42,9 +45,7 @@ subtest {
                        ('brazillian wax',            'Fluffer'),
                      ); 
 
-  my ($expected_method, $expected_class) = @expected[0].flat;
-
-  my $c = 0;
+  # my ($expected_method, $expected_class) = @expected[0].flat;
 
   for @expected -> @pair {
       my ($expected_method, $expected_class) = @pair;

@@ -20,7 +20,7 @@ role Introspector {
 
         for @lines -> $l {
             my $fmt = "%-25s %-25s\n";
-            $report ~= sprintf $fmt, $l[0], $l[1];
+            $report ~= sprintf $fmt, $l[0], $l[1];   ## TODO why not return list of lines?
         }
         return $report;
     }
@@ -30,7 +30,8 @@ role Introspector {
     }
 
     sub clean_methods (@raws) {
-        my @strs = @raws.map({ .gist });
+#        my @strs = @raws.map({ .gist });  ## TODO try .name
+        my @strs = @raws.map({ .name });  
         my @ways = @strs.sort;
         my @unis = @ways.unique;
         # filter out methods 'Method+{is-nodal}.new' and 'menu'
